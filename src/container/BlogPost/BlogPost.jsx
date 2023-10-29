@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import './BlogPost.css';
 import Post from "../../component/Post/Post";
+import axios from "axios";
 
 class BlogPost extends Component {
   state = {
@@ -8,14 +9,30 @@ class BlogPost extends Component {
   }
 
   componentDidMount() {
-    // fetch("https://jsonplaceholder.typicode.com/posts/1")
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => response.json())
-      .then((json) => {
-        this.setState({
-          post: json
-        })
-      })
+    // fecth API
+    // fetch("https://jsonplaceholder.typicode.com/posts")
+    //   .then((response) => response.json())
+    //   .then((json) => {
+    //     this.setState({
+    //       post: json
+    //     })
+    //   })
+
+    // axios
+    axios.get("https://jsonplaceholder.typicode.com/posts")
+      .then((res) => {
+        // console.log(res.data);
+        this.setState(
+          {
+          post: res.data,
+          }
+        );
+      }
+      )
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+    
   }
     render() {
         return (
