@@ -71,4 +71,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 # React-intermediate_api
 
 ### to start db json
+This documentation has moved here:
+[https://github.com/typicode/json-server]
+(https://github.com/typicode/json-server)
+
 `json-server --watch db.json --port 3004` 
