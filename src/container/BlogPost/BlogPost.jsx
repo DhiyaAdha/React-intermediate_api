@@ -5,10 +5,10 @@ class BlogPost extends Component {
     render() {
         return (
           <Fragment>
-            <p>Blog Post</p>
+            <p className="section-title">Blog Post</p>
             <div className="post">
               <div className="img-thumb">
-                <img src="" alt="dummy" />
+                <img src="https://picsum.photos/id/6/200/130" alt="dummy" />
               </div>
               <div className="content">
                 <p className="title">Dummy Title</p>
