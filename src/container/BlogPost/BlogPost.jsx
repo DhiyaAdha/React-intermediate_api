@@ -8,17 +8,17 @@ class BlogPost extends Component {
     post: []
   }
 
-  componentDidMount() {
-    // fecth API
-    // fetch("https://jsonplaceholder.typicode.com/posts")
-    //   .then((response) => response.json())
-    //   .then((json) => {
-    //     this.setState({
-    //       post: json
-    //     })
-    //   })
+  getFecthAPI = () => {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => response.json())
+      .then((json) => {
+        this.setState({
+          post: json
+        })
+      })
+  }
 
-    // axios
+  getPostAPI = () => {
     axios
       .get("http://localhost:3004/posts")
       .then((res) => {
@@ -27,10 +27,28 @@ class BlogPost extends Component {
           post: res.data,
         });
       })
+  }
+
+
+  handleRemove = (data) => {
+    console.log(data);
+    axios
+      .delete(`http://localhost:3004/posts/${data}`)
+      .then((res) => {
+        console.log(res);
+        this.getPostAPI();
+      })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-    
+  }
+
+  componentDidMount() {
+    // fecth API
+    // this.getFecthAPI();
+
+    // axios
+    this.getPostAPI();
   }
     render() {
         return (
@@ -38,7 +56,7 @@ class BlogPost extends Component {
             <p className="section-title">Blog Post</p>
             {
               this.state.post.map(post => {
-              return <Post key={post.id} title={post.title} desc={post.author} />;
+              return <Post data={post} key={post.id} title={post.title} body={post.author} remove={this.handleRemove} />;
               })
             }
           </Fragment>
