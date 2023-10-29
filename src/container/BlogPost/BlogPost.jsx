@@ -19,16 +19,14 @@ class BlogPost extends Component {
     //   })
 
     // axios
-    axios.get("https://jsonplaceholder.typicode.com/posts")
+    axios
+      .get("http://localhost:3004/posts")
       .then((res) => {
         // console.log(res.data);
-        this.setState(
-          {
+        this.setState({
           post: res.data,
-          }
-        );
-      }
-      )
+        });
+      })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
@@ -40,7 +38,7 @@ class BlogPost extends Component {
             <p className="section-title">Blog Post</p>
             {
               this.state.post.map(post => {
-              return <Post key={post.id} title={post.title} desc={post.desc} />;
+              return <Post key={post.id} title={post.title} desc={post.author} />;
               })
             }
           </Fragment>
