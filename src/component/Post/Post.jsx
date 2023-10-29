@@ -7,8 +7,8 @@ const Post = (props) => {
           <img src="https://picsum.photos/id/6/200/130" alt="dummy" />
         </div>
         <div className="content">
-          <p className="title">Dummy Title</p>
-          <p className="desc">Dummy Body here</p>
+          <p className="title">{props.title}</p>
+          <p className="desc">{props.desc}</p>
         </div>
       </div>
     );
