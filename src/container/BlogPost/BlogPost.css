@@ -55,7 +55,17 @@
   margin-top: 18px;
 }
 
-.remove:hover {
+.update {
+  padding: 12px 18px;
+  background: #8bc34a;
+  color: white;
+  border-radius: 4px;
+  outline: none;
+  margin-top: 18px;
+  margin-right: 10px;
+}
+
+.remove:hover, .update:hover {
   cursor: pointer;
   background: #dc5406;
 }
@@ -89,7 +99,7 @@
   columns: #607d8b;
 }
 
-.button.btn-submit {
+.btn-submit {
   outline: none;
   border: 1px solid #2196f3;
   padding: 10px 30px;
@@ -97,4 +107,11 @@
   text-transform: uppercase;
   font-weight: bold;
   margin-top: 18px;
+  border-radius: 4px;
+}
+
+.btn-submit:hover {
+  cursor: pointer;
+  background: #2196f3;
+  color: white;
 }
