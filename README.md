@@ -70,9 +70,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # React-intermediate_api
 
-### to start db json
+### to link start db json, jsonplace holder, picsum
 This documentation has moved here:
 [https://github.com/typicode/json-server]
 (https://github.com/typicode/json-server)
 
+[https://picsum.photos/images]
+(https://picsum.photos/images)
+
+[https://jsonplaceholder.typicode.com/]
+(https://jsonplaceholder.typicode.com/)
+
 `json-server --watch db.json --port 3004` 
+
